@@ -11,6 +11,9 @@
   code { background: #f5f5f7; padding: 2px 6px; border-radius: 5px; font-size: 0.9em; }
   kbd { border: 1px solid #d2d2d7; border-radius: 5px; padding: 1px 6px; font-size: 0.85em; }
   .card { background: #f5f5f7; border-radius: 12px; padding: 4px 20px; margin: 20px 0; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+  td { padding: 6px 10px; border-bottom: 1px solid #d2d2d7; vertical-align: top; }
+  td:first-child { white-space: nowrap; width: 130px; }
   .lang-nav { margin: 8px 0 24px; }
   .lang-nav a { color: #0066cc; text-decoration: none; margin-right: 16px; font-size: 14px; }
   hr { border: none; border-top: 1px solid #d2d2d7; margin: 48px 0; }
@@ -18,6 +21,7 @@
     body { color: #f5f5f7; background: #1d1d1f; }
     code { background: #2c2c2e; }
     kbd { border-color: #48484a; }
+    td { border-color: #48484a; }
     .card { background: #2c2c2e; }
     hr { border-color: #48484a; }
   }
@@ -52,6 +56,21 @@
 <h2>Can other apps trigger KeptClip?</h2>
 <p>Yes — via URL scheme (<code>keptclip://show</code>, <code>keptclip://paste?index=3</code>, <code>keptclip://capture</code>) and App Intents (Shortcuts / Spotlight).</p>
 
+<h2>Keyboard shortcuts</h2>
+<table>
+  <tr><td><kbd>⌘⇧V</kbd></td><td>Open clipboard history from anywhere (configurable)</td></tr>
+  <tr><td>Type anything</td><td>Instant search</td></tr>
+  <tr><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>Move selection</td></tr>
+  <tr><td><kbd>↩</kbd></td><td>Copy and close panel</td></tr>
+  <tr><td><kbd>⌘1</kbd>–<kbd>⌘9</kbd></td><td>Copy the Nth item directly</td></tr>
+  <tr><td><kbd>Space</kbd></td><td>QuickLook preview (Pro)</td></tr>
+  <tr><td><kbd>⌘</kbd> + click</td><td>Multi-select several clips</td></tr>
+  <tr><td><kbd>↩</kbd> (with selection)</td><td>Merge selected clips and copy (Pro)</td></tr>
+  <tr><td><kbd>⌘P</kbd></td><td>Pin / unpin selected clip</td></tr>
+  <tr><td><kbd>⌘⌫</kbd></td><td>Delete selected clip</td></tr>
+  <tr><td><kbd>Esc</kbd></td><td>Clear search → cancel selection → close panel</td></tr>
+</table>
+
 <h2>Contact</h2>
 <p>Support email: <strong>keptclip@163.com</strong> — I read everything and usually reply within 48 hours.</p>
 </div>
@@ -83,6 +102,21 @@
 
 <h2>其他工具能调用 KeptClip 吗？</h2>
 <p>可以——通过 URL Scheme（<code>keptclip://show</code>、<code>keptclip://paste?index=3</code>、<code>keptclip://capture</code>）和 App Intents（快捷指令 / 聚焦搜索）。</p>
+
+<h2>快捷键速查表</h2>
+<table>
+  <tr><td><kbd>⌘⇧V</kbd></td><td>任意位置呼出剪贴板历史（可配置）</td></tr>
+  <tr><td>直接打字</td><td>即时搜索</td></tr>
+  <tr><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>移动选中项</td></tr>
+  <tr><td><kbd>↩</kbd></td><td>复制并关闭面板</td></tr>
+  <tr><td><kbd>⌘1</kbd>–<kbd>⌘9</kbd></td><td>直达复制第 N 条</td></tr>
+  <tr><td><kbd>空格</kbd></td><td>QuickLook 预览（Pro）</td></tr>
+  <tr><td><kbd>⌘</kbd> + 点击</td><td>多选若干条</td></tr>
+  <tr><td><kbd>↩</kbd>（多选时）</td><td>合并所选并复制（Pro）</td></tr>
+  <tr><td><kbd>⌘P</kbd></td><td>固定 / 取消固定选中项</td></tr>
+  <tr><td><kbd>⌘⌫</kbd></td><td>删除选中项</td></tr>
+  <tr><td><kbd>Esc</kbd></td><td>清空搜索 → 取消多选 → 关闭面板</td></tr>
+</table>
 
 <h2>联系方式</h2>
 <p>支持邮箱：<strong>keptclip@163.com</strong> —— 每封邮件都会看，通常 48 小时内回复。</p>
