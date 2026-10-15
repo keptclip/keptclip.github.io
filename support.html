@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KeptClip Support</title>
+<style>
+  body { font-family: -apple-system, "Helvetica Neue", "PingFang SC", sans-serif; max-width: 680px; margin: 40px auto; padding: 0 20px; color: #1d1d1f; line-height: 1.65; }
+  h1 { font-size: 26px; }
+  h2 { font-size: 17px; margin-top: 28px; }
+  code { background: #f5f5f7; padding: 2px 6px; border-radius: 5px; font-size: 0.9em; }
+  kbd { border: 1px solid #d2d2d7; border-radius: 5px; padding: 1px 6px; font-size: 0.85em; }
+  .card { background: #f5f5f7; border-radius: 12px; padding: 4px 20px; margin: 20px 0; }
+  .lang-nav { margin: 8px 0 24px; }
+  .lang-nav a { color: #0066cc; text-decoration: none; margin-right: 16px; font-size: 14px; }
+  hr { border: none; border-top: 1px solid #d2d2d7; margin: 48px 0; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #f5f5f7; background: #1d1d1f; }
+    code { background: #2c2c2e; }
+    kbd { border-color: #48484a; }
+    .card { background: #2c2c2e; }
+    hr { border-color: #48484a; }
+  }
+</style>
+</head>
+<body>
+<p class="lang-nav"><a href="#en">English</a><a href="#zh">中文</a></p>
+
+<div id="en">
+<h1>KeptClip Support</h1>
+<p>A lightweight clipboard history manager for your Mac. Everything stays on your device.</p>
+
+<div class="card">
+<p><strong>Quick start:</strong> press <kbd>⌘⇧V</kbd> anywhere to open your clipboard history. Type to search, <kbd>↑</kbd><kbd>↓</kbd> to move, <kbd>↩</kbd> to copy, then paste with <kbd>⌘V</kbd>.</p>
+</div>
+
+<h2>Nothing appears in my history. Why?</h2>
+<p>Make sure the app is running (check the menu bar icon). KeptClip ignores copies from password managers by default — you can review this list in Settings → Privacy → Ignore Copies from These Apps.</p>
+
+<h2>Why was a copied item skipped?</h2>
+<p>KeptClip refuses to store content that looks like a credit card number, private key, API token, or national ID number — even in the history, that's a risk. The menu bar icon briefly turns into a shield when this happens, and Settings → Privacy shows a count of skipped items.</p>
+
+<h2>What's the difference between Free and Pro?</h2>
+<p>Free keeps your last 50 clips with full search and keyboard flow. Pro (one-time purchase, no subscription) removes the fixed item limit and unlocks multi-select merge paste, inline preview, and app lock (Touch ID / password).</p>
+
+<h2>Does KeptClip require special permissions?</h2>
+<p>No. KeptClip works without Accessibility, Input Monitoring, or Full Disk Access. It reads the clipboard like any paste operation does, and nothing is ever uploaded.</p>
+
+<h2>How do I delete my data?</h2>
+<p>Delete single clips with <kbd>⌘⌫</kbd> or the hover ✕ button; clear everything in Settings → Storage. Deleting the app removes all data, since everything is stored locally.</p>
+
+<h2>Can other apps trigger KeptClip?</h2>
+<p>Yes — via URL scheme (<code>keptclip://show</code>, <code>keptclip://paste?index=3</code>, <code>keptclip://capture</code>) and App Intents (Shortcuts / Spotlight).</p>
+
+<h2>Contact</h2>
+<p>Support email: <strong>{{CONTACT_EMAIL}}</strong> — I read everything and usually reply within 48 hours.</p>
+</div>
+
+<hr>
+
+<div id="zh" lang="zh-Hans">
+<h1>KeptClip 支持页</h1>
+<p>一款轻量的 Mac 剪贴板历史管理工具。所有内容都只保存在你的设备上。</p>
+
+<div class="card">
+<p><strong>快速上手：</strong>在任意应用中按 <kbd>⌘⇧V</kbd> 呼出剪贴板历史。打字即搜索，<kbd>↑</kbd><kbd>↓</kbd> 移动选中，<kbd>↩</kbd> 复制，然后到目标位置按 <kbd>⌘V</kbd> 粘贴。</p>
+</div>
+
+<h2>为什么历史里没有内容？</h2>
+<p>先确认应用在运行（看菜单栏图标）。KeptClip 默认忽略来自密码管理器的复制——可以在 设置 → 隐私 → 忽略以下应用的复制 中查看和调整这份列表。</p>
+
+<h2>为什么我复制的内容被跳过了？</h2>
+<p>KeptClip 会拒绝保存疑似银行卡号、私钥、API Token、身份证号的内容——这类信息留在历史里本身就是风险。命中时菜单栏图标会短暂变成盾牌，设置 → 隐私 中也会显示已跳过的条数。</p>
+
+<h2>免费版和 Pro 有什么区别？</h2>
+<p>免费版保留最近 50 条历史，搜索和键盘流完整可用。Pro（一次性买断，无订阅）解除固定条数限制，并解锁多选合并粘贴、内嵌预览和应用锁（触控 ID / 密码）。</p>
+
+<h2>KeptClip 需要特殊权限吗？</h2>
+<p>不需要。KeptClip 无需辅助功能、输入监控或完全磁盘访问权限。它读取剪贴板的方式和普通粘贴相同，且任何内容都不会上传。</p>
+
+<h2>如何删除我的数据？</h2>
+<p>单条删除用 <kbd>⌘⌫</kbd> 或悬停 ✕ 按钮；全部清空在 设置 → 存储。删除应用即可彻底移除所有数据——所有内容都保存在本地。</p>
+
+<h2>其他工具能调用 KeptClip 吗？</h2>
+<p>可以——通过 URL Scheme（<code>keptclip://show</code>、<code>keptclip://paste?index=3</code>、<code>keptclip://capture</code>）和 App Intents（快捷指令 / 聚焦搜索）。</p>
+
+<h2>联系方式</h2>
+<p>支持邮箱：<strong>{{CONTACT_EMAIL}}</strong> —— 每封邮件都会看，通常 48 小时内回复。</p>
+</div>
+</body>
+</html>
