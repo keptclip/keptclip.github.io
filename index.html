@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<!-- 
+  KeptClip 官网（单文件静态站，无依赖）
+  部署：任意静态托管（GitHub Pages / Netlify / Vercel）。
+  上线前待办：把 nav 与 hero 的 App Store 链接 href 换成真实商品页。
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KeptClip — Clipboard history for macOS</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<meta name="description" content="KeptClip keeps everything you copy — text, links, code, colors, images, files — in a searchable history that never leaves your Mac. Zero telemetry. One-time purchase.">
+<meta name="theme-color" content="#0b0b10">
+<meta property="og:type" content="website">
+<meta property="og:title" content="KeptClip — Clipboard history for macOS">
+<meta property="og:description" content="Everything you copy, in a searchable history that never leaves your Mac. Zero telemetry. One-time purchase.">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root{
+    --bg:#0b0b10; --bg2:#12121a; --card:rgba(255,255,255,.04); --border:rgba(255,255,255,.09);
+    --text:#e7e7ee; --muted:#9a9aac; --accent:#3b82f6; --accent2:#8b5cf6; --green:#34d399;
+    --radius:16px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:linear-gradient(160deg,#0b0b10 0%,#14101f 45%,#1c1430 100%);
+    color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",sans-serif;
+    -webkit-font-smoothing:antialiased; line-height:1.6;
+  }
+  a{color:var(--accent);text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* ---- nav ---- */
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(11,11,16,.7);border-bottom:1px solid var(--border)}
+  nav .wrap{display:flex;align-items:center;gap:28px;height:60px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;color:var(--text)}
+  .logo .mark{width:28px;height:28px;border-radius:7px;object-fit:contain;display:block;box-shadow:0 1px 6px rgba(0,0,0,.45)}
+  nav .links{display:flex;gap:22px;margin-left:auto}
+  nav .links a{color:var(--muted);font-size:14px;transition:color .2s}
+  nav .links a:hover{color:var(--text)}
+  .lang{display:flex;gap:4px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:3px}
+  .lang button{border:0;background:transparent;color:var(--muted);font-size:12px;padding:4px 8px;border-radius:6px;cursor:pointer}
+  .lang button.on{background:rgba(59,130,246,.25);color:#fff}
+  .dl{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:600;font-size:14px;padding:8px 16px;border-radius:9px;white-space:nowrap}
+  .dl:hover{filter:brightness(1.1)}
+  @media(max-width:860px){nav .links{display:none}}
+  @media(max-width:560px){
+    nav .wrap{height:56px;gap:8px}
+    .logo{font-size:15px}.logo .mark{width:24px;height:24px}
+    .lang{padding:2px}.lang button{font-size:11px;padding:3px 6px}
+    .dl{font-size:12px;padding:7px 10px}
+    .hero{padding:64px 0 48px}.sub{font-size:16px}
+    section{padding:64px 0}
+  }
+  @media(max-width:380px){.dl{display:none}}
+
+  /* ---- hero ---- */
+  .hero{padding:96px 0 72px;text-align:center}
+  .badge{display:inline-flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);border:1px solid var(--border);background:var(--card);border-radius:99px;padding:6px 16px}
+  .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
+  h1{font-size:clamp(28px,4.6vw,46px);font-weight:800;letter-spacing:-.02em;margin:22px 0 14px;line-height:1.12;white-space:nowrap}
+  @media(max-width:520px){h1{white-space:normal;font-size:25px}}  /* 极窄屏允许换行，防溢出 */
+  h1 .grad{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{max-width:640px;margin:0 auto;color:var(--muted);font-size:18px}
+  .keys{display:flex;gap:8px;justify-content:center;margin:30px 0 26px}
+  .key{min-width:44px;padding:8px 14px;border-radius:9px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-bottom-width:3px;font-family:ui-monospace,Menlo,monospace;font-size:18px;color:#fff;box-shadow:0 2px 12px rgba(0,0,0,.4)}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .cta{padding:13px 26px;border-radius:11px;font-weight:600;font-size:15px}
+  .cta.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
+  .cta.ghost{border:1px solid var(--border);color:var(--text);background:var(--card)}
+  .trust{margin-top:18px;font-size:13px;color:var(--muted)}
+  .trust span{margin:0 10px}
+
+  /* ---- panel mock ---- */
+  .mock-area{margin:56px auto 0;width:100%;max-width:880px;perspective:1400px}
+  .panel{display:flex;width:100%;max-width:min(780px,100%);margin:0 auto;aspect-ratio:760/560;border-radius:18px;overflow:hidden;
+    border:1px solid rgba(255,255,255,.14);background:#17171f;box-shadow:0 40px 90px rgba(0,0,0,.55),0 0 0 1px rgba(0,0,0,.4);
+    text-align:left;transform:rotateX(4deg);transition:transform .6s}
+  .mock-area:hover .panel{transform:rotateX(0)}
+  .panel .list{flex:1.05;border-right:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column;min-width:0}
+  .p-search{margin:12px;padding:8px 12px;border-radius:9px;background:rgba(255,255,255,.06);color:var(--muted);font-size:13px}
+  .p-filters{display:flex;gap:6px;padding:0 12px 8px;font-size:11px}
+  .p-filters span{padding:4px 10px;border-radius:99px;color:var(--muted);background:rgba(255,255,255,.05)}
+  .p-filters span.on{background:rgba(59,130,246,.3);color:#dbeafe}
+  .p-row{display:flex;gap:10px;align-items:center;padding:9px 12px;border-left:2px solid transparent}
+  .p-row .ic{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;font-size:12px;color:#c9c9d6;flex-shrink:0}
+  .p-row .tx{min-width:0;flex:1}
+  .p-row .l1{font-size:12.5px;color:#dcdce6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .p-row .l2{font-size:10.5px;color:#82828f}
+  .p-row.sel{background:rgba(59,130,246,.14);border-left-color:var(--accent)}
+  .p-foot{margin-top:auto;padding:9px 14px;font-size:11px;color:#82828f;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between}
+  .panel .preview{flex:1;display:flex;flex-direction:column;background:#0e0e14}
+  .ph-img{flex:1;margin:14px;border-radius:12px;background:
+    radial-gradient(120% 120% at 20% 15%,#4f79b8 0%,transparent 55%),
+    radial-gradient(120% 120% at 85% 80%,#7c5cbf 0%,transparent 55%),
+    linear-gradient(140deg,#2a3550,#3d2f57);position:relative;overflow:hidden}
+  .ph-img::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.35),transparent 40%)}
+  .ph-cap{padding:0 16px 14px;font-size:11.5px;color:#9a9aac;display:flex;align-items:center;gap:8px}
+  .ph-cap .kbd{font-size:10px;border:1px solid rgba(255,255,255,.25);border-radius:5px;padding:1px 6px;font-family:ui-monospace,monospace;color:#dcdce6}
+  @media(max-width:960px){.panel,.mock-area:hover .panel{transform:none!important}}
+  @media(max-width:720px){.panel{aspect-ratio:auto;flex-direction:column}.panel .list{border-right:0;border-bottom:1px solid rgba(255,255,255,.07)}.ph-img{min-height:180px}}
+
+  /* ---- sections ---- */
+  section{padding:88px 0;scroll-margin-top:76px}  /* 锚点跳转时不被悬浮导航遮住 */
+  section h2{font-size:clamp(26px,4vw,38px);font-weight:800;letter-spacing:-.01em;text-align:center}
+  section .sec-sub{text-align:center;color:var(--muted);margin:12px auto 48px;max-width:560px;font-size:16px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:860px){.grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px;transition:transform .25s,border-color .25s}
+  .card:hover{transform:translateY(-3px);border-color:rgba(59,130,246,.45)}
+  .card .fic{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;margin-bottom:16px;color:#e9e9f2}
+  .card h3{font-size:16.5px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+  .card p{color:var(--muted);font-size:14px}
+  .tag{font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 8px;border-radius:99px}
+  .tag.free{background:rgba(52,211,153,.15);color:var(--green);border:1px solid rgba(52,211,153,.3)}
+  .tag.pro{background:rgba(139,92,246,.15);color:#c4b5fd;border:1px solid rgba(139,92,246,.3)}
+
+  /* shortcuts table */
+  section.band{position:relative}
+  section.band::before{content:"";position:absolute;top:0;bottom:0;left:calc(50% - 50vw);right:calc(50% - 50vw);
+    background:rgba(255,255,255,.022);border-top:1px solid var(--border);border-bottom:1px solid var(--border);z-index:-1}
+  .sc-table{max-width:640px;margin:0 auto}
+  .sc-row{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--border)}
+  .sc-row:last-child{border-bottom:0}
+  .sc-row .desc{font-size:15px;color:var(--text)}
+  .sc-row .keys{margin:0;gap:6px}
+  .sc-row .key{min-width:34px;padding:5px 11px;font-size:14px}
+
+  /* privacy */
+  .priv{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:860px){.priv{grid-template-columns:1fr}}
+  .priv .card{text-align:center}
+  .priv .fic{margin:0 auto 16px}
+
+  /* pricing */
+  .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:760px;margin:0 auto}
+  @media(max-width:680px){.price-grid{grid-template-columns:1fr}}
+  .price{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px}
+  .price.pro{border-color:rgba(139,92,246,.5);background:linear-gradient(180deg,rgba(139,92,246,.08),rgba(59,130,246,.05))}
+  .price .name{font-size:14px;font-weight:700;letter-spacing:.06em;color:var(--muted)}
+  .price .big{font-size:34px;font-weight:800;margin:8px 0 20px}
+  .price .big small{font-size:14px;font-weight:500;color:var(--muted)}
+  .price ul{list-style:none;margin-bottom:22px}
+  .price li{padding:7px 0;color:var(--muted);font-size:14.5px;display:flex;gap:10px;align-items:baseline}
+  .price li::before{content:"✓";color:var(--green);font-weight:700}
+  .price li.na{opacity:.45}.price li.na::before{content:"—";color:var(--muted)}
+  .pro-note{text-align:center;color:var(--muted);font-size:13px;margin-top:22px}
+
+  /* faq */
+  .faq{max-width:700px;margin:0 auto}
+  details{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:12px;padding:0 20px}
+  details summary{cursor:pointer;padding:17px 0;font-weight:600;font-size:15px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  details summary::after{content:"+";color:var(--accent);font-size:20px}
+  details[open] summary::after{content:"–"}
+  details p{padding:0 0 17px;color:var(--muted);font-size:14.5px}
+
+  footer{border-top:1px solid var(--border);padding:34px 0;color:var(--muted);font-size:13px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+  /* 只做位移不做透明度：任何时刻（截图/慢加载/动画中断）内容都可见 */
+  .reveal{transform:translateY(16px);transition:transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal,.reveal.in{transform:none;transition:none}.panel,.mock-area:hover .panel{transform:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo"><img class="mark" alt="KeptClip app icon" src="data:image/png;base64,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">KeptClip</div>
+    <div class="links">
+      <a href="#features" data-i18n="nav.features"></a>
+      <a href="#shortcuts" data-i18n="nav.shortcuts"></a>
+      <a href="#privacy" data-i18n="nav.privacy"></a>
+      <a href="#pricing" data-i18n="nav.pricing"></a>
+      <a href="#faq" data-i18n="nav.faq"></a>
+    </div>
+    <div class="lang" id="lang">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中文</button>
+      <button data-lang="ja">日本語</button>
+      <button data-lang="ko">한국어</button>
+    </div>
+    <!-- TODO: 替换为真实 App Store 链接 -->
+    <a class="dl" href="#" data-i18n="nav.download"></a>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <div class="badge"><span class="dot"></span><span data-i18n="hero.badge"></span></div>
+  <h1><span data-i18n="hero.t1"></span> <span class="grad" data-i18n="hero.t2"></span></h1>
+  <p class="sub" data-i18n="hero.sub"></p>
+  <div class="keys"><span class="key">⌘</span><span class="key">⇧</span><span class="key">V</span></div>
+  <div class="cta-row">
+    <a class="cta primary" href="#" data-i18n="hero.cta"></a>
+    <a class="cta ghost" href="#shortcuts" data-i18n="hero.cta2"></a>
+  </div>
+  <p class="trust"><span data-i18n="hero.trust1"></span><span>·</span><span data-i18n="hero.trust2"></span><span>·</span><span data-i18n="hero.trust3"></span></p>
+
+  <div class="mock-area">
+    <div class="panel">
+      <div class="list">
+        <div class="p-search" data-i18n="mock.search"></div>
+        <div class="p-filters"><span class="on" data-i18n="mock.f1"></span><span data-i18n="mock.f2"></span><span data-i18n="mock.f3"></span><span data-i18n="mock.f4"></span><span data-i18n="mock.f5"></span></div>
+        <div class="p-row sel"><div class="ic" style="background:linear-gradient(140deg,#2a3550,#3d2f57)"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="15" rx="2.4"/><circle cx="8.4" cy="9.6" r="1.5"/><path d="M4 17l4.8-4.6 3.8 3.6 2.9-2.8L20 18.6"/></svg></div><div class="tx"><div class="l1" data-i18n="mock.img"></div><div class="l2" data-i18n="mock.img2"></div></div><div class="key" style="font-size:11px;padding:2px 7px">⌘1</div></div>
+        <div class="p-row"><div class="ic" style="background:rgba(59,130,246,.2)">⌘</div><div class="tx"><div class="l1" style="font-family:ui-monospace,Menlo,monospace">func render(items: [ClipItem])</div><div class="l2" data-i18n="mock.r2"></div></div><div class="key" style="font-size:11px;padding:2px 7px">⌘2</div></div>
+        <div class="p-row"><div class="ic" style="background:rgba(139,92,246,.2)"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.2 13.8a4.5 4.5 0 0 0 6.3 0l2-2a4.5 4.5 0 0 0-6.3-6.3l-1 1"/><path d="M13.8 10.2a4.5 4.5 0 0 0-6.3 0l-2 2a4.5 4.5 0 0 0 6.3 6.3l1-1"/></svg></div><div class="tx"><div class="l1">developer.apple.com/design/human-interface…</div><div class="l2" data-i18n="mock.r3"></div></div><div class="key" style="font-size:11px;padding:2px 7px">⌘3</div></div>
+        <div class="p-row"><div class="ic" style="background:rgba(52,211,153,.15)"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.4"/><circle cx="8.6" cy="9.8" r="1.1" fill="currentColor" stroke="none"/><circle cx="12" cy="7.6" r="1.1" fill="currentColor" stroke="none"/><circle cx="15.4" cy="9.8" r="1.1" fill="currentColor" stroke="none"/><circle cx="9.4" cy="15.2" r="1.1" fill="currentColor" stroke="none"/></svg></div><div class="tx"><div class="l1" style="font-family:ui-monospace,monospace">#3B82F6</div><div class="l2" data-i18n="mock.r4"></div></div><div class="key" style="font-size:11px;padding:2px 7px">⌘4</div></div>
+        <div class="p-row"><div class="ic" style="background:rgba(255,255,255,.08)">T</div><div class="tx"><div class="l1" data-i18n="mock.r5"></div><div class="l2" data-i18n="mock.r6"></div></div></div>
+        <div class="p-foot"><span data-i18n="mock.foot1"></span><span data-i18n="mock.foot2"></span></div>
+      </div>
+      <div class="preview">
+        <div class="ph-img"></div>
+        <div class="ph-cap"><span class="kbd">Space</span><span data-i18n="mock.cap"></span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="features" class="wrap reveal">
+  <h2 data-i18n="feat.title"></h2>
+  <p class="sec-sub" data-i18n="feat.sub"></p>
+  <div class="grid">
+    <div class="card"><div class="fic" style="background:rgba(59,130,246,.18)"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-3.6-3.6"/></svg></div><h3 data-i18n="f1.t"></h3><p data-i18n="f1.d"></p></div>
+    <div class="card"><div class="fic" style="background:rgba(52,211,153,.15)"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 6.5 12 6.5 21.5 12 21.5 12 18 17.5 12 17.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.4"/></svg></div><h3><span data-i18n="f2.t"></span><span class="tag free" data-i18n="tag.free"></span></h3><p data-i18n="f2.d"></p></div>
+    <div class="card"><div class="fic" style="background:rgba(251,146,60,.16)"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5.6c0 4.4-2.9 7.4-7 8.9-4.1-1.5-7-4.5-7-8.9V6l7-3z"/><path d="M9.2 12.2l2 2 3.6-3.8"/></svg></div><h3 data-i18n="f3.t"></h3><p data-i18n="f3.d"></p></div>
+    <div class="card"><div class="fic" style="background:rgba(139,92,246,.16)"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="2.4"/><path d="M6.5 10h.01M10 10h.01M13.5 10h.01M17 10h.01M8.5 14h7"/></svg></div><h3 data-i18n="f4.t"></h3><p data-i18n="f4.d"></p></div>
+    <div class="card"><div class="fic" style="background:rgba(59,130,246,.18)"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="6" rx="2"/><rect x="3" y="13.5" width="18" height="6" rx="2"/><path d="M7 7.5h4M7 16.5h4"/></svg></div><h3><span data-i18n="f5.t"></span><span class="tag pro" data-i18n="tag.pro"></span></h3><p data-i18n="f5.d"></p></div>
+    <div class="card"><div class="fic" style="background:rgba(251,113,133,.15)"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="9.5" rx="2.4"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/><path d="M12 14.5v2"/></svg></div><h3><span data-i18n="f6.t"></span><span class="tag pro" data-i18n="tag.pro"></span></h3><p data-i18n="f6.d"></p></div>
+  </div>
+</section>
+
+<section id="shortcuts" class="wrap reveal band">
+  <h2 data-i18n="sc.title"></h2>
+  <p class="sec-sub" data-i18n="sc.sub"></p>
+  <div class="sc-table">
+    <div class="sc-row"><span class="desc" data-i18n="s1.d"></span><div class="keys"><span class="key">⌘</span><span class="key">⇧</span><span class="key">V</span></div></div>
+    <div class="sc-row"><span class="desc" data-i18n="s2.d"></span><div class="keys"><span class="key">↑</span><span class="key">↓</span></div></div>
+    <div class="sc-row"><span class="desc" data-i18n="s3.d"></span><div class="keys"><span class="key">↩</span></div></div>
+    <div class="sc-row"><span class="desc" data-i18n="s4.d"></span><div class="keys"><span class="key">⌘</span><span class="key">1–9</span></div></div>
+    <div class="sc-row"><span class="desc" data-i18n="s5.d"></span><div class="keys"><span class="key">⌘</span><span class="key" data-i18n="s5.k"></span></div></div>
+    <div class="sc-row"><span class="desc" data-i18n="s6.d"></span><div class="keys"><span class="key">Space</span></div></div>
+  </div>
+</section>
+
+<section id="privacy" class="wrap reveal">
+  <h2 data-i18n="pr.title"></h2>
+  <p class="sec-sub" data-i18n="pr.sub"></p>
+  <div class="priv">
+    <div class="card"><div class="fic" style="background:rgba(52,211,153,.15)"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 18L18 6"/></svg></div><h3 data-i18n="p1.t"></h3><p data-i18n="p1.d"></p></div>
+    <div class="card"><div class="fic" style="background:rgba(59,130,246,.18)"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="7.5" ry="2.8"/><path d="M4.5 6v12c0 1.6 3.4 2.8 7.5 2.8s7.5-1.2 7.5-2.8V6"/><path d="M4.5 12c0 1.6 3.4 2.8 7.5 2.8s7.5-1.2 7.5-2.8"/></svg></div><h3 data-i18n="p2.t"></h3><p data-i18n="p2.d"></p></div>
+    <div class="card"><div class="fic" style="background:rgba(139,92,246,.16)"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.5" cy="14.5" r="3.6"/><path d="M11 12l8-8M16.5 6.5L19 9M14 9l2.5 2.5"/></svg></div><h3 data-i18n="p3.t"></h3><p data-i18n="p3.d"></p></div>
+  </div>
+</section>
+
+<section id="pricing" class="wrap reveal">
+  <h2 data-i18n="pi.title"></h2>
+  <p class="sec-sub" data-i18n="pi.sub"></p>
+  <div class="price-grid">
+    <div class="price">
+      <div class="name" data-i18n="pi.free"></div>
+      <div class="big" data-i18n="pi.free0"></div>
+      <ul>
+        <li data-i18n="pi.fl1"></li><li data-i18n="pi.fl2"></li>
+        <li data-i18n="pi.fl3"></li><li data-i18n="pi.fl4"></li>
+        <li class="na" data-i18n="pi.fl5"></li><li class="na" data-i18n="pi.fl6"></li>
+      </ul>
+      <a class="cta ghost" href="#" style="display:block;text-align:center" data-i18n="pi.freebtn"></a>
+    </div>
+    <div class="price pro">
+      <div class="name" data-i18n="pi.pron"></div>
+      <div class="big"><span data-i18n="pi.pro0"></span> <small data-i18n="pi.pro0s"></small></div>
+      <ul>
+        <li data-i18n="pi.pl1"></li><li data-i18n="pi.pl2"></li><li data-i18n="pi.pl3"></li>
+        <li data-i18n="pi.pl4"></li><li data-i18n="pi.pl5"></li>
+      </ul>
+      <a class="cta primary" href="#" style="display:block;text-align:center" data-i18n="pi.probtn"></a>
+    </div>
+  </div>
+  <p class="pro-note" data-i18n="pi.note"></p>
+</section>
+
+<section id="faq" class="wrap reveal">
+  <h2 data-i18n="faq.title"></h2>
+  <p class="sec-sub" data-i18n="faq.sub"></p>
+  <div class="faq">
+    <details><summary data-i18n="q1.q"></summary><p data-i18n="q1.a"></p></details>
+    <details><summary data-i18n="q2.q"></summary><p data-i18n="q2.a"></p></details>
+    <details><summary data-i18n="q3.q"></summary><p data-i18n="q3.a"></p></details>
+    <details><summary data-i18n="q4.q"></summary><p data-i18n="q4.a"></p></details>
+    <details><summary data-i18n="q5.q"></summary><p data-i18n="q5.a"></p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 KeptClip</span>
+    <span><a href="privacy.html" data-i18n="footer.privacy"></a> · <a href="support.html" data-i18n="footer.support"></a></span>
+  </div>
+</footer>
+
+<script>
+const I18N = {
+en:{
+ "nav.features":"Features","nav.shortcuts":"Shortcuts","nav.privacy":"Privacy","nav.pricing":"Pricing","nav.faq":"FAQ","nav.download":"Download",
+ "hero.badge":"Zero telemetry · macOS 14+ · One-time purchase","hero.t1":"Your clipboard,","hero.t2":"one shortcut away",
+ "hero.sub":"KeptClip keeps everything you copy — text, links, code, colors, images, files — in a searchable history that never leaves your Mac.",
+ "hero.cta":"Download on the Mac App Store","hero.cta2":"See the keyboard flow",
+ "hero.trust1":"No Accessibility permission","hero.trust2":"No servers","hero.trust3":"No tracking",
+ "mock.search":"Search history…","mock.f1":"All","mock.f2":"Text","mock.f3":"Images","mock.f4":"Files","mock.f5":"Pinned",
+ "mock.img":"Image · 1376 × 768","mock.img2":"Safari · just now","mock.r2":"Code · Safari · 2 min ago","mock.r3":"Link · Safari · 9 min ago",
+ "mock.r4":"Color · Safari · 15 min ago","mock.r5":"Ship it Friday. The build passed review on the first attempt.","mock.r6":"Plain text · Notes · 1 h ago",
+ "mock.foot1":"Free · last 50 clips","mock.foot2":"⌘1–9 quick copy",
+ "mock.cap":"Quick Look preview — select any item and press Space",
+ "feat.title":"Why KeptClip","feat.sub":"Everything you copy, organized and protected.",
+ "f1.t":"Instant search","f1.d":"Type to filter your entire history in milliseconds — keyboard-first, never touch the mouse.",
+ "f2.t":"Quick Look preview","f2.d":"Select an item and press Space — see images and full text right inside the panel.",
+ "f3.t":"Sensitive data auto-skipped","f3.d":"Card numbers, private keys, API tokens and IDs are detected and refused before they enter your history.",
+ "f4.t":"Plain-text copy","f4.d":"Strip formatting and copy as clean plain text with one click.",
+ "f5.t":"Multi-select merge","f5.d":"⌘-click several items, press Return — merged into one, ready to paste.",
+ "f6.t":"Unlimited history & App Lock","f6.d":"Remove the 50-item limit and protect your history with Touch ID or password.",
+ "tag.free":"FREE","tag.pro":"PRO",
+ "sc.title":"Built for your keyboard","sc.sub":"Search, select, copy — without touching the mouse.",
+ "s1.d":"Open KeptClip","s2.d":"Navigate & select","s3.d":"Copy to clipboard","s4.d":"Copy item 1–9 directly",
+ "s5.d":"Multi-select items","s5.k":"Click","s6.d":"Quick Look preview",
+ "pr.title":"Privacy is built in, not promised","pr.sub":"Engineered from day one for zero data leakage.",
+ "p1.t":"No servers, no analytics","p1.d":"All detection runs on-device. The app makes no network requests except StoreKit.",
+ "p2.t":"History never leaves your Mac","p2.d":"Everything stays in the app's sandbox container on your machine.",
+ "p3.t":"Zero special permissions","p3.d":"No Accessibility, no Input Monitoring, no Screen Recording — the app never asks.",
+ "pi.title":"Start free, upgrade when you need more","pi.sub":"One-time purchase. No subscription. No account.",
+ "pi.free":"FREE","pi.free0":"$0","pi.freebtn":"Download the free app",
+ "pi.fl1":"Last 50 clips","pi.fl2":"Full instant search","pi.fl3":"Inline + Space preview","pi.fl4":"Plain-text copy",
+ "pi.fl5":"Unlimited history","pi.fl6":"Merge paste & App Lock",
+ "pi.pron":"PRO","pi.pro0":"One-time purchase","pi.pro0s":"· no subscription","pi.probtn":"Unlock in the app",
+ "pi.pl1":"No fixed history limit","pi.pl2":"Multi-select merge paste","pi.pl3":"App Lock — Touch ID / password",
+ "pi.pl4":"Everything in Free, plus","pi.pl5":"Lifetime updates included",
+ "pi.note":"No subscription · No account · No tracking",
+ "faq.title":"Frequently asked questions",
+ "faq.sub":"Short answers about macOS behavior, privacy and pricing.",
+ "q1.q":"Does it paste automatically?","q1.a":"No — and that is by design. The Mac App Store forbids apps from simulating keystrokes (guideline 2.4.5). KeptClip copies the selected item to your clipboard and confirms it; you press ⌘V to paste, exactly like a native macOS workflow.",
+ "q2.q":"Where is my data stored?","q2.a":"Only inside the app's sandbox container on your Mac. Nothing is uploaded, and the app makes no network requests except StoreKit for the purchase.",
+ "q3.q":"What are the system requirements?","q3.a":"macOS 14 (Sonoma) or later. Apple silicon and Intel are both supported.",
+ "q4.q":"Which languages are supported?","q4.a":"English, Simplified Chinese, Japanese and Korean — the whole interface, including menus and Shortcuts integration.",
+ "q5.q":"How do I buy Pro?","q5.a":"One-time purchase inside the app: open the panel, click the gear icon and find the KeptClip Pro section. No subscription, no account, and the free tier stays fully usable without it.",
+ "footer.privacy":"Privacy Policy","footer.support":"Support"
+},
+zh:{
+ "nav.features":"功能","nav.shortcuts":"快捷键","nav.privacy":"隐私","nav.pricing":"价格","nav.faq":"常见问题","nav.download":"下载",
+ "hero.badge":"零遥测 · macOS 14+ · 一次买断","hero.t1":"你的剪贴板，","hero.t2":"一个快捷键的距离",
+ "hero.sub":"KeptClip 把你复制的每一段内容——文本、链接、代码、颜色、图片、文件——放进可搜索的历史，且永不离开你的 Mac。",
+ "hero.cta":"从 Mac App Store 下载","hero.cta2":"查看键盘流",
+ "hero.trust1":"无需辅助功能权限","hero.trust2":"无服务器","hero.trust3":"无追踪",
+ "mock.search":"搜索历史…","mock.f1":"全部","mock.f2":"文本","mock.f3":"图片","mock.f4":"文件","mock.f5":"已固定",
+ "mock.img":"图片 · 1376 × 768","mock.img2":"Safari · 刚刚","mock.r2":"代码 · Safari · 2 分钟前","mock.r3":"链接 · Safari · 9 分钟前",
+ "mock.r4":"颜色 · Safari · 15 分钟前","mock.r5":"周五发布，审核一次通过。","mock.r6":"纯文本 · 备忘录 · 1 小时前",
+ "mock.foot1":"免费 · 最近 50 条","mock.foot2":"⌘1–9 快速复制",
+ "mock.cap":"快速预览——选中条目后按空格",
+ "feat.title":"为什么选择 KeptClip","feat.sub":"你复制的每一段内容，都被整理与保护。",
+ "f1.t":"即时搜索","f1.d":"输入即搜，毫秒级过滤全部历史——全程键盘操作，不碰鼠标。",
+ "f2.t":"快速预览","f2.d":"选中条目按空格——图片与全文直接在面板内预览。",
+ "f3.t":"敏感数据自动跳过","f3.d":"卡号、私钥、API 令牌与证件号在进入历史前被识别并拒存。",
+ "f4.t":"纯文本复制","f4.d":"一键去掉格式，只保留干净的纯文本。",
+ "f5.t":"多选合并","f5.d":"⌘ 点选多条，按回车合并为一条，随时粘贴。",
+ "f6.t":"无限历史与应用锁","f6.d":"解除 50 条上限，用 Touch ID 或密码保护你的历史。",
+ "tag.free":"免费","tag.pro":"PRO",
+ "sc.title":"为键盘而生","sc.sub":"搜索、选择、复制——全程不碰鼠标。",
+ "s1.d":"打开 KeptClip","s2.d":"移动并选择","s3.d":"复制到剪贴板","s4.d":"直接复制第 1–9 条",
+ "s5.d":"多选条目","s5.k":"点击","s6.d":"快速预览",
+ "pr.title":"隐私是内建的，不是口头承诺","pr.sub":"从第一天起就为杜绝数据外泄而设计。",
+ "p1.t":"无服务器、无分析","p1.d":"所有检测均在本地完成。除 StoreKit 外，App 不发起任何网络请求。",
+ "p2.t":"历史永不离开你的 Mac","p2.d":"一切数据只存在这台机器的应用沙盒容器内。",
+ "p3.t":"零特殊权限","p3.d":"不索取辅助功能、输入监控或屏幕录制权限——从不弹窗。",
+ "pi.title":"免费开始，需要更多再升级","pi.sub":"一次买断。无订阅。无账号。",
+ "pi.free":"免费版","pi.free0":"$0","pi.freebtn":"下载免费 App",
+ "pi.fl1":"最近 50 条历史","pi.fl2":"完整即时搜索","pi.fl3":"内嵌 + 空格预览","pi.fl4":"纯文本复制",
+ "pi.fl5":"历史条数无上限","pi.fl6":"合并粘贴与应用锁",
+ "pi.pron":"PRO","pi.pro0":"一次买断","pi.pro0s":"· 无订阅","pi.probtn":"在 App 内解锁",
+ "pi.pl1":"历史条数无固定上限","pi.pl2":"多选合并粘贴","pi.pl3":"应用锁——Touch ID / 密码",
+ "pi.pl4":"包含免费版全部功能","pi.pl5":"永久更新",
+ "pi.note":"无订阅 · 无账号 · 无追踪",
+ "faq.title":"常见问题",
+ "faq.sub":"关于 macOS 行为、隐私与价格的简短回答。",
+ "q1.q":"它会自动帮我粘贴吗？","q1.a":"不会——这是有意设计。Mac App Store 禁止应用模拟按键（指南 2.4.5）。KeptClip 把选中内容写入剪贴板并提示确认，你按 ⌘V 粘贴，与 macOS 原生工作流一致。",
+ "q2.q":"我的数据存在哪里？","q2.a":"只存在你 Mac 上的应用沙盒容器内。不上传任何数据，除 StoreKit 购买外不发起网络请求。",
+ "q3.q":"系统要求是什么？","q3.a":"macOS 14（Sonoma）及以上。Apple Silicon 与 Intel 均支持。",
+ "q4.q":"支持哪些语言？","q4.a":"英文、简体中文、日文、韩文——包括菜单和快捷指令集成在内的完整界面。",
+ "q5.q":"Pro 怎么买？","q5.a":"App 内一次买断：打开面板，点齿轮图标，找到 KeptClip Pro 区。无订阅、无账号，免费版始终完整可用。",
+ "footer.privacy":"隐私政策","footer.support":"支持反馈"
+},
+ja:{
+ "nav.features":"機能","nav.shortcuts":"ショートカット","nav.privacy":"プライバシー","nav.pricing":"価格","nav.faq":"よくある質問","nav.download":"ダウンロード",
+ "hero.badge":"テレメトリなし · macOS 14+ · 買い切り","hero.t1":"クリップボードが、","hero.t2":"ショートカット一つで",
+ "hero.sub":"コピーしたすべて — テキスト、リンク、コード、色、画像、ファイル — を検索可能な履歴に。データはあなたの Mac の外に出ません。",
+ "hero.cta":"Mac App Store からダウンロード","hero.cta2":"キーボード操作を見る",
+ "hero.trust1":"アクセシビリティ権限不要","hero.trust2":"サーバーなし","hero.trust3":"トラッキングなし",
+ "mock.search":"履歴を検索…","mock.f1":"すべて","mock.f2":"テキスト","mock.f3":"画像","mock.f4":"ファイル","mock.f5":"ピン留め済み",
+ "mock.img":"画像 · 1376 × 768","mock.img2":"Safari · たった今","mock.r2":"コード · Safari · 2分前","mock.r3":"リンク · Safari · 9分前",
+ "mock.r4":"カラー · Safari · 15分前","mock.r5":"金曜日にリリース。審査は一発で通過しました。","mock.r6":"プレーンテキスト · メモ · 1時間前",
+ "mock.foot1":"無料 · 最新50件","mock.foot2":"⌘1–9 クイックコピー",
+ "mock.cap":"クイックプレビュー — 項目を選んで Space",
+ "feat.title":"KeptClip が選ばれる理由","feat.sub":"コピーのすべてを整理し、守ります。",
+ "f1.t":"即時検索","f1.d":"入力するだけで全履歴をミリ秒で絞り込み。マウスは不要です。",
+ "f2.t":"クイックプレビュー","f2.d":"項目を選んで Space — 画像も全文もパネル内でその場で確認。",
+ "f3.t":"センシティブ情報を自動スキップ","f3.d":"カード番号・秘密鍵・APIトークン・身分証を履歴に入る前に検出して保存しません。",
+ "f4.t":"プレーンテキストコピー","f4.d":"書式を剥がして、純粋なテキストとしてワンクリックでコピー。",
+ "f5.t":"複数選択まとめコピー","f5.d":"⌘クリックで複数選択し、Return で1つに統合。すぐにペーストできます。",
+ "f6.t":"無制限履歴とApp Lock","f6.d":"50件の上限を解除し、Touch ID またはパスワードで履歴を保護。",
+ "tag.free":"無料","tag.pro":"PRO",
+ "sc.title":"キーボードのために設計","sc.sub":"検索・選択・コピー — マウスは不要です。",
+ "s1.d":"KeptClip を開く","s2.d":"移動と選択","s3.d":"クリップボードへコピー","s4.d":"N番目の項目を直接コピー",
+ "s5.d":"複数選択","s5.k":"クリック","s6.d":"クイックプレビュー",
+ "pr.title":"プライバシーは設計そのもの","pr.sub":"初日からデータ漏えいゼロを追求して設計。",
+ "p1.t":"サーバーなし、解析なし","p1.d":"すべての検出はオンデバイス。StoreKit 以外の通信はありません。",
+ "p2.t":"履歴は Mac の外へ出ません","p2.d":"データはアプリのサンドボックスコンテナにのみ保存されます。",
+ "p3.t":"特別な権限ゼロ","p3.d":"アクセシビリティ・入力監視・画面収録は要求しません。",
+ "pi.title":"無料で始めて、必要になったらアップグレード","pi.sub":"買い切り。サブスクなし。アカウント不要。",
+ "pi.free":"無料版","pi.free0":"$0","pi.freebtn":"無料アプリをダウンロード",
+ "pi.fl1":"最新50件の履歴","pi.fl2":"完全な即時検索","pi.fl3":"インライン + Space プレビュー","pi.fl4":"プレーンテキストコピー",
+ "pi.fl5":"履歴数の上限なし","pi.fl6":"まとめコピーとApp Lock",
+ "pi.pron":"PRO","pi.pro0":"買い切り","pi.pro0s":"· サブスクなし","pi.probtn":"アプリ内でアンロック",
+ "pi.pl1":"履歴数の固定上限なし","pi.pl2":"複数選択まとめコピー","pi.pl3":"App Lock — Touch ID / パスワード",
+ "pi.pl4":"無料版の全機能を含む","pi.pl5":"永久アップデート",
+ "pi.note":"サブスクなし · アカウント不要 · トラッキングなし",
+ "faq.title":"よくある質問",
+ "faq.sub":"macOS の動作、プライバシー、価格についての短い回答。",
+ "q1.q":"自動でペーストしますか？","q1.a":"しません — これは意図した設計です。Mac App Store はキー入力のシミュレーションを禁止しています（ガイドライン 2.4.5）。KeptClip は選択項目をクリップボードにコピーして通知し、⌘V はあなたが押します。macOS の自然なワークフローそのものです。",
+ "q2.q":"データはどこに保存されますか？","q2.a":"あなたの Mac のアプリサンドボックスコンテナ内のみです。アップロードは一切なく、StoreKit（購入）以外の通信もありません。",
+ "q3.q":"システム要件は？","q3.a":"macOS 14（Sonoma）以降。Apple Silicon と Intel の両方に対応しています。",
+ "q4.q":"対応言語は？","q4.a":"英語・简体中文・日本語・한국어。メニューやショートカット連携を含む全体です。",
+ "q5.q":"Pro の購入方法は？","q5.a":"アプリ内で買い切り：パネルを開き、歯車アイコンから KeptClip Pro セクションへ。サブスクもアカウントも不要で、無料版は常に完全に使えます。",
+ "footer.privacy":"プライバシーポリシー","footer.support":"サポート"
+},
+ko:{
+ "nav.features":"기능","nav.shortcuts":"단축키","nav.privacy":"개인정보","nav.pricing":"가격","nav.faq":"자주 묻는 질문","nav.download":"다운로드",
+ "hero.badge":"텔레메트리 없음 · macOS 14+ · 일회성 구매","hero.t1":"클립보드가","hero.t2":"단축키 하나로",
+ "hero.sub":"복사한 모든 것 — 텍스트, 링크, 코드, 색상, 이미지, 파일 — 을 검색 가능한 기록으로. 데이터는 당신의 Mac 밖으로 나가지 않습니다.",
+ "hero.cta":"Mac App Store에서 다운로드","hero.cta2":"키보드 흐름 보기",
+ "hero.trust1":"접근성 권한 불필요","hero.trust2":"서버 없음","hero.trust3":"추적 없음",
+ "mock.search":"기록 검색…","mock.f1":"전체","mock.f2":"텍스트","mock.f3":"이미지","mock.f4":"파일","mock.f5":"고정됨",
+ "mock.img":"이미지 · 1376 × 768","mock.img2":"Safari · 방금 전","mock.r2":"코드 · Safari · 2분 전","mock.r3":"링크 · Safari · 9분 전",
+ "mock.r4":"색상 · Safari · 15분 전","mock.r5":"금요일에 출시. 심사는 한 번에 통과했어요.","mock.r6":"일반 텍스트 · 메모 · 1시간 전",
+ "mock.foot1":"무료 · 최근 50개","mock.foot2":"⌘1–9 빠른 복사",
+ "mock.cap":"빠른 미리보기 — 항목 선택 후 Space",
+ "feat.title":"KeptClip인 이유","feat.sub":"복사한 모든 것을 정리하고 지킵니다.",
+ "f1.t":"즉시 검색","f1.d":"입력만으로 전체 기록을 밀리초 단위로 필터링 — 마우스 없이 키보드만으로.",
+ "f2.t":"빠른 미리보기","f2.d":"항목 선택 후 Space — 이미지와 전문을 패널 안에서 바로 확인.",
+ "f3.t":"민감 정보 자동 제외","f3.d":"카드 번호, 개인 키, API 토큰, 신분증 번호를 기록에 저장되기 전에 감지하여 거부합니다.",
+ "f4.t":"일반 텍스트 복사","f4.d":"서식을 제거하고 깨끗한 일반 텍스트로 한 번에 복사.",
+ "f5.t":"다중 선택 병합","f5.d":"⌘-클릭으로 여러 항목을 선택하고 Return으로 하나로 합쳐 복사.",
+ "f6.t":"무제한 기록과 앱 잠금","f6.d":"50개 한도를 해제하고 Touch ID 또는 암호로 기록을 보호.",
+ "tag.free":"무료","tag.pro":"PRO",
+ "sc.title":"키보드를 위한 설계","sc.sub":"검색, 선택, 복사 — 마우스 없이.",
+ "s1.d":"KeptClip 열기","s2.d":"이동과 선택","s3.d":"클립보드로 복사","s4.d":"N번째 항목 바로 복사",
+ "s5.d":"여러 항목 선택","s5.k":"클릭","s6.d":"빠른 미리보기",
+ "pr.title":"프라이버시는 설계에 내장","pr.sub":"첫날부터 데이터 유출 제로를 위해 설계했습니다.",
+ "p1.t":"서버 없음, 분석 없음","p1.d":"모든 감지는 온디바이스에서 실행. StoreKit 외에는 통신이 없습니다.",
+ "p2.t":"기록은 Mac 밖으로 나가지 않음","p2.d":"모든 데이터는 이 기기의 앱 샌드박스 컨테이너에만 저장됩니다.",
+ "p3.t":"특별한 권한 제로","p3.d":"접근성, 입력 모니터링, 화면 녹화를 요구하지 않습니다.",
+ "pi.title":"무료로 시작하고, 필요할 때 업그레이드","pi.sub":"일회성 구매. 구독 없음. 계정 없음.",
+ "pi.free":"무료","pi.free0":"$0","pi.freebtn":"무료 앱 다운로드",
+ "pi.fl1":"최근 50개 기록","pi.fl2":"전체 즉시 검색","pi.fl3":"인라인 + Space 미리보기","pi.fl4":"일반 텍스트 복사",
+ "pi.fl5":"기록 한도 없음","pi.fl6":"병합 복사 및 앱 잠금",
+ "pi.pron":"PRO","pi.pro0":"일회성 구매","pi.pro0s":"· 구독 없음","pi.probtn":"앱 내에서 잠금 해제",
+ "pi.pl1":"기록 한도 없음","pi.pl2":"다중 선택 병합 붙여넣기","pi.pl3":"앱 잠금 — Touch ID / 암호",
+ "pi.pl4":"무료 버전의 모든 기능 포함","pi.pl5":"평생 업데이트",
+ "pi.note":"구독 없음 · 계정 없음 · 추적 없음",
+ "faq.title":"자주 묻는 질문",
+ "faq.sub":"macOS 동작, 개인정보, 가격에 대한 짧은 답변.",
+ "q1.q":"자동으로 붙여넣어주나요?","q1.a":"아니요 — 의도된 설계입니다. Mac App Store는 키 입력 시뮬레이션을 금지합니다(가이드라인 2.4.5). KeptClip은 선택한 항목을 클립보드에 복사하고 알려주며, ⌘V는 직접 누릅니다. macOS 기본 워크플로우와 동일합니다.",
+ "q2.q":"데이터는 어디에 저장되나요?","q2.a":"당신의 Mac 앱 샌드박스 컨테이너 안에만 저장됩니다. 업로드 없음, 구매(StoreKit) 외 통신 없음.",
+ "q3.q":"시스템 요구사항은?","q3.a":"macOS 14(Sonoma) 이상. Apple Silicon과 Intel 모두 지원합니다.",
+ "q4.q":"지원 언어는?","q4.a":"영어·简体中文·일본어·한국어 — 메뉴와 단축키 연동을 포함한 전체 인터페이스.",
+ "q5.q":"Pro는 어떻게 구매하나요?","q5.a":"앱 내 일회성 구매: 패널을 열고 톱니바퀴 아이콘 → KeptClip Pro 섹션. 구독도 계정도 없으며, 무료 버전은 항상 완전하게 사용할 수 있습니다.",
+ "footer.privacy":"개인정보 처리방침","footer.support":"지원"
+}};
+const LS_KEY="kc_site_lang";
+function apply(lang){
+  const d=I18N[lang]; if(!d) return;
+  document.documentElement.lang=lang;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{const k=el.getAttribute("data-i18n"); if(d[k]!==undefined) el.textContent=d[k];});
+  document.querySelectorAll("#lang button").forEach(b=>b.classList.toggle("on",b.dataset.lang===lang));
+  try{localStorage.setItem(LS_KEY,lang)}catch(e){}
+}
+(function(){
+  let lang=null;
+  try{lang=localStorage.getItem(LS_KEY)}catch(e){}
+  if(!lang){const n=(navigator.language||"en").toLowerCase();
+    lang=n.startsWith("zh")?"zh":n.startsWith("ja")?"ja":n.startsWith("ko")?"ko":"en";}
+  apply(lang);
+  document.getElementById("lang").addEventListener("click",e=>{
+    if(e.target.dataset.lang) apply(e.target.dataset.lang);
+  });
+})();
+/* scroll reveal —— 带兜底：无 IO 支持或 1.2s 内未触发时全部显示，
+   避免任何情况下内容因动画而不可见 */
+const reveals=document.querySelectorAll(".reveal");
+if ("IntersectionObserver" in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+  reveals.forEach(el=>io.observe(el));
+  setTimeout(()=>reveals.forEach(el=>el.classList.add("in")),1200);
+} else {
+  reveals.forEach(el=>el.classList.add("in"));
+}
+</script>
+</body>
+</html>
