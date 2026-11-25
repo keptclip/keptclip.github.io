@@ -2,7 +2,7 @@
 <!-- 
   KeptClip 官网（单文件静态站，无依赖）
   部署：任意静态托管（GitHub Pages / Netlify / Vercel）。
-  App Store 链接：https://apps.apple.com/cn/app/keptclip-clipboard-manager/id6823423725?mt=12
+  App Store 链接按语言分 storefront：en→/us/ zh→/cn/ ja→/jp/ ko→/kr/（de、fr 区尚未上架，故不提供这两语言页）
   （/cn/ 地区前缀是链接稳定所必需；如有他区商店链接可在 App Store Connect 后台查得）
 -->
 <html lang="ja">
@@ -194,7 +194,7 @@
       <a href="/ko/">한국어</a>
     </div>
     <!-- TODO: 替换为真实 App Store 链接 -->
-    <a class="dl" href="https://apps.apple.com/cn/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener">ダウンロード</a>
+    <a class="dl store-link" href="https://apps.apple.com/jp/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener">ダウンロード</a>
   </div>
 </nav>
 
@@ -204,7 +204,7 @@
   <p class="sub">コピーしたすべて — テキスト、リンク、コード、色、画像、ファイル — を検索可能な履歴に。データはあなたの Mac の外に出ません。</p>
   <div class="keys"><span class="key">⌘</span><span class="key">⇧</span><span class="key">V</span></div>
   <div class="cta-row">
-    <a class="cta primary" href="https://apps.apple.com/cn/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener">Mac App Store からダウンロード</a>
+    <a class="cta primary store-link" href="https://apps.apple.com/jp/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener">Mac App Store からダウンロード</a>
     <a class="cta ghost" href="#shortcuts">キーボード操作を見る</a>
   </div>
   <p class="trust"><span>アクセシビリティ権限不要</span><span>·</span><span>サーバーなし</span><span>·</span><span>トラッキングなし</span></p>
@@ -305,7 +305,7 @@
         <li>インライン + Space プレビュー</li><li>プレーンテキストコピー</li>
         <li class="na">履歴数の上限なし</li><li class="na">まとめコピーとApp Lock</li>
       </ul>
-      <a class="cta ghost" href="https://apps.apple.com/cn/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener" style="display:block;text-align:center">無料アプリをダウンロード</a>
+      <a class="cta ghost store-link" href="https://apps.apple.com/jp/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener" style="display:block;text-align:center">無料アプリをダウンロード</a>
     </div>
     <div class="price pro">
       <div class="name">PRO</div>
@@ -314,7 +314,7 @@
         <li>履歴数の固定上限なし</li><li>複数選択まとめコピー</li><li>App Lock — Touch ID / パスワード</li>
         <li>無料版の全機能を含む</li><li>永久アップデート</li>
       </ul>
-      <a class="cta primary" href="https://apps.apple.com/cn/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener" style="display:block;text-align:center">アプリ内でアンロック</a>
+      <a class="cta primary store-link" href="https://apps.apple.com/jp/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener" style="display:block;text-align:center">アプリ内でアンロック</a>
     </div>
   </div>
   <p class="pro-note">サブスクなし · アカウント不要 · トラッキングなし</p>
@@ -339,6 +339,7 @@
   </div>
 </footer>
 
+<script>
 /* scroll reveal —— 带兜底：无 IO 支持或 1.2s 内未触发时全部显示，
    避免任何情况下内容因动画而不可见 */
 const reveals=document.querySelectorAll(".reveal");

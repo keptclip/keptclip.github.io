@@ -2,7 +2,7 @@
 <!-- 
   KeptClip 官网（单文件静态站，无依赖）
   部署：任意静态托管（GitHub Pages / Netlify / Vercel）。
-  App Store 链接：https://apps.apple.com/cn/app/keptclip-clipboard-manager/id6823423725?mt=12
+  App Store 链接按语言分 storefront：en→/us/ zh→/cn/ ja→/jp/ ko→/kr/（de、fr 区尚未上架，故不提供这两语言页）
   （/cn/ 地区前缀是链接稳定所必需；如有他区商店链接可在 App Store Connect 后台查得）
 -->
 <html lang="ko">
@@ -194,7 +194,7 @@
       <a href="/ko/" class="on">한국어</a>
     </div>
     <!-- TODO: 替换为真实 App Store 链接 -->
-    <a class="dl" href="https://apps.apple.com/cn/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener">다운로드</a>
+    <a class="dl store-link" href="https://apps.apple.com/kr/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener">다운로드</a>
   </div>
 </nav>
 
@@ -204,7 +204,7 @@
   <p class="sub">복사한 모든 것 — 텍스트, 링크, 코드, 색상, 이미지, 파일 — 을 검색 가능한 기록으로. 데이터는 당신의 Mac 밖으로 나가지 않습니다.</p>
   <div class="keys"><span class="key">⌘</span><span class="key">⇧</span><span class="key">V</span></div>
   <div class="cta-row">
-    <a class="cta primary" href="https://apps.apple.com/cn/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener">Mac App Store에서 다운로드</a>
+    <a class="cta primary store-link" href="https://apps.apple.com/kr/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener">Mac App Store에서 다운로드</a>
     <a class="cta ghost" href="#shortcuts">키보드 흐름 보기</a>
   </div>
   <p class="trust"><span>접근성 권한 불필요</span><span>·</span><span>서버 없음</span><span>·</span><span>추적 없음</span></p>
@@ -305,7 +305,7 @@
         <li>인라인 + Space 미리보기</li><li>일반 텍스트 복사</li>
         <li class="na">기록 한도 없음</li><li class="na">병합 복사 및 앱 잠금</li>
       </ul>
-      <a class="cta ghost" href="https://apps.apple.com/cn/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener" style="display:block;text-align:center">무료 앱 다운로드</a>
+      <a class="cta ghost store-link" href="https://apps.apple.com/kr/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener" style="display:block;text-align:center">무료 앱 다운로드</a>
     </div>
     <div class="price pro">
       <div class="name">PRO</div>
@@ -314,7 +314,7 @@
         <li>기록 한도 없음</li><li>다중 선택 병합 붙여넣기</li><li>앱 잠금 — Touch ID / 암호</li>
         <li>무료 버전의 모든 기능 포함</li><li>평생 업데이트</li>
       </ul>
-      <a class="cta primary" href="https://apps.apple.com/cn/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener" style="display:block;text-align:center">앱 내에서 잠금 해제</a>
+      <a class="cta primary store-link" href="https://apps.apple.com/kr/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener" style="display:block;text-align:center">앱 내에서 잠금 해제</a>
     </div>
   </div>
   <p class="pro-note">구독 없음 · 계정 없음 · 추적 없음</p>
@@ -339,6 +339,7 @@
   </div>
 </footer>
 
+<script>
 /* scroll reveal —— 带兜底：无 IO 支持或 1.2s 内未触发时全部显示，
    避免任何情况下内容因动画而不可见 */
 const reveals=document.querySelectorAll(".reveal");

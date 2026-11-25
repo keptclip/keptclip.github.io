@@ -2,7 +2,7 @@
 <!-- 
   KeptClip 官网（单文件静态站，无依赖）
   部署：任意静态托管（GitHub Pages / Netlify / Vercel）。
-  App Store 链接：https://apps.apple.com/cn/app/keptclip-clipboard-manager/id6823423725?mt=12
+  App Store 链接按语言分 storefront：en→/us/ zh→/cn/ ja→/jp/ ko→/kr/（de、fr 区尚未上架，故不提供这两语言页）
   （/cn/ 地区前缀是链接稳定所必需；如有他区商店链接可在 App Store Connect 后台查得）
 -->
 <html lang="zh-Hans">
@@ -194,7 +194,7 @@
       <a href="/ko/">한국어</a>
     </div>
     <!-- TODO: 替换为真实 App Store 链接 -->
-    <a class="dl" href="https://apps.apple.com/cn/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener">下载</a>
+    <a class="dl store-link" href="https://apps.apple.com/cn/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener">下载</a>
   </div>
 </nav>
 
@@ -204,7 +204,7 @@
   <p class="sub">KeptClip 把你复制的每一段内容——文本、链接、代码、颜色、图片、文件——放进可搜索的历史，且永不离开你的 Mac。</p>
   <div class="keys"><span class="key">⌘</span><span class="key">⇧</span><span class="key">V</span></div>
   <div class="cta-row">
-    <a class="cta primary" href="https://apps.apple.com/cn/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener">从 Mac App Store 下载</a>
+    <a class="cta primary store-link" href="https://apps.apple.com/cn/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener">从 Mac App Store 下载</a>
     <a class="cta ghost" href="#shortcuts">查看键盘流</a>
   </div>
   <p class="trust"><span>无需辅助功能权限</span><span>·</span><span>无服务器</span><span>·</span><span>无追踪</span></p>
@@ -305,7 +305,7 @@
         <li>内嵌 + 空格预览</li><li>纯文本复制</li>
         <li class="na">历史条数无上限</li><li class="na">合并粘贴与应用锁</li>
       </ul>
-      <a class="cta ghost" href="https://apps.apple.com/cn/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener" style="display:block;text-align:center">下载免费 App</a>
+      <a class="cta ghost store-link" href="https://apps.apple.com/cn/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener" style="display:block;text-align:center">下载免费 App</a>
     </div>
     <div class="price pro">
       <div class="name">PRO</div>
@@ -314,7 +314,7 @@
         <li>历史条数无固定上限</li><li>多选合并粘贴</li><li>应用锁——Touch ID / 密码</li>
         <li>包含免费版全部功能</li><li>永久更新</li>
       </ul>
-      <a class="cta primary" href="https://apps.apple.com/cn/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener" style="display:block;text-align:center">在 App 内解锁</a>
+      <a class="cta primary store-link" href="https://apps.apple.com/cn/app/keptclip-clipboard-manager/id6823423725?mt=12" target="_blank" rel="noopener" style="display:block;text-align:center">在 App 内解锁</a>
     </div>
   </div>
   <p class="pro-note">无订阅 · 无账号 · 无追踪</p>
@@ -339,6 +339,7 @@
   </div>
 </footer>
 
+<script>
 /* scroll reveal —— 带兜底：无 IO 支持或 1.2s 内未触发时全部显示，
    避免任何情况下内容因动画而不可见 */
 const reveals=document.querySelectorAll(".reveal");
