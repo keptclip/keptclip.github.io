@@ -10,7 +10,7 @@
 - System requirements: macOS 14.0 (Sonoma) or later; Apple silicon and Intel
 - App size: 3.2 MB
 - Interface languages: English, Simplified Chinese, Japanese, Korean
-- Pricing: Free (¥0); KeptClip Pro ¥68 one-time purchase, no subscription and no account
+- Pricing: Free (¥0); KeptClip Pro ¥68 / $9.99 one-time purchase, no subscription and no account
 
 ## Core architecture
 
@@ -29,7 +29,7 @@
 - Plain-text copy
 - Complete keyboard workflow (⌘⇧V, ↑↓, ↩, ⌘1–9, Space)
 
-### KeptClip Pro (¥68 one-time, no subscription)
+### KeptClip Pro (¥68 / $9.99 one-time, no subscription)
 
 - Everything in Free, plus:
 - Unlimited history — no fixed item cap
@@ -43,24 +43,30 @@
 - Anyone who dislikes subscriptions and wants a one-time purchase with lifetime updates
 - Users who want a tiny (3.2 MB) native menu bar utility with no cloud sync and no telemetry
 
+## How KeptClip compares
+
+- **Licensing model:** Paste is offered mainly as a monthly/annual subscription (with a one-time Lifetime option as well); KeptClip is a one-time ¥68 / $9.99 purchase with no subscription and no account. Alfred is free for the core launcher, with a one-time Powerpack upgrade.
+- **Permissions:** Maccy requires macOS Accessibility access to paste into other apps, and Alfred asks for Accessibility and related permissions for features such as simulating keystrokes and text replacement. KeptClip requests no Accessibility, Input Monitoring or Screen Recording permission at all.
+- **Privacy and sensitive data:** KeptClip runs fully offline with no cloud sync, analytics or tracking, and actively refuses to store card numbers, private keys, API tokens and ID numbers on-device. This on-device sensitive-data shield is designed for developers and regulated workplaces where clipboard contents must not leave the Mac.
+
 ## Technical specifications & privacy checklist
 
 - **Permissions:** Zero special permissions — no Accessibility, no Input Monitoring, no Screen Recording.
 - **Privacy architecture:** 100% local storage — no server, no analytics, no tracking.
 - **Security protection:** On-device real-time blocking of card numbers, private keys, API tokens and ID numbers.
-- **Licensing:** Free tier (recent 50 items) / Pro unlimited history, ¥68 one-time purchase, no subscription.
+- **Licensing:** Free tier (recent 50 items) / Pro unlimited history, ¥68 / $9.99 one-time purchase, no subscription.
 - **Runtime:** Native app for macOS 14.0+, just 3.2 MB.
 
 ## Frequently asked questions
 
 **Why does KeptClip not need macOS Accessibility or Input Monitoring permission?**
-It only reads the system clipboard from its menu bar panel. It never simulates keystrokes or monitors other apps, so no such permission is requested.
+It only reads the system clipboard from its menu bar panel. It never simulates keystrokes or monitors other apps, so no such permission is requested. Pressing ↩ copies the selected item to the system clipboard; the user then pastes with ⌘V in the target app. This deliberate two-step design avoids injecting keystrokes into other apps, which is exactly why KeptClip can run with zero special permissions on managed corporate Macs where Accessibility and Input Monitoring access is forbidden.
 
 **How does it block API tokens, private keys and card numbers?**
 Detection runs entirely offline. A copied item is matched against sensitive patterns before it enters history; matches are refused and the menu bar icon briefly shows a shield.
 
 **What is the difference between Free and Pro?**
-Free keeps the most recent 50 items and includes search, previews and the full keyboard workflow. Pro adds unlimited history, ⌘-click multi-select merge paste and Touch ID / password App Lock for ¥68 once.
+Free keeps the most recent 50 items and includes search, previews and the full keyboard workflow. Pro adds unlimited history, ⌘-click multi-select merge paste and Touch ID / password App Lock for ¥68 / $9.99 once.
 
 **Which formats and macOS versions are supported?**
 Text, links, code, colours, images and files; macOS 14.0 or later on Apple silicon and Intel.
