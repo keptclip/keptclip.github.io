@@ -1,6 +1,6 @@
 # KeptClip
 
-> A local-only clipboard history manager for macOS 14+. Every item you copy — text, links, code, colours, images and files — stays on your Mac, with unlimited history in the free tier. No Accessibility or Input Monitoring permission, no server, no tracking, no subscription required.
+> A local-only clipboard history manager for macOS 14+. Every item you copy — text, links, code, images and files — stays on your Mac, with no fixed history cap in the free tier. No Accessibility or Input Monitoring permission, no server, no tracking, no subscription required.
 
 - Website: https://keptclip.github.io/
 - App Store (US): https://apps.apple.com/us/app/keptclip-clipboard-manager/id6823423725?mt=12
@@ -8,17 +8,17 @@
 - App Store (Japan): https://apps.apple.com/jp/app/keptclip-clipboard-manager/id6823423725?mt=12
 - App Store (Korea): https://apps.apple.com/kr/app/keptclip-clipboard-manager/id6823423725?mt=12
 - System requirements: macOS 14.0 (Sonoma) or later; Apple silicon and Intel
-- App size: 3.2 MB
+- App size: 5.5 MB
 - Interface languages: English, Simplified Chinese, Japanese, Korean
 - Pricing: Free (¥0); KeptClip Pro ¥68 / $9.99 one-time purchase, no subscription and no account
 
 ## Core architecture
 
-- **Zero special permissions.** KeptClip is a menu bar app that reads the system clipboard on demand. It does not request Accessibility, Input Monitoring or Screen Recording access, and never simulates keystrokes. This makes it suitable for managed corporate Macs where those permissions are forbidden.
-- **Local sensitive-data shield.** Before a copied item enters history, card numbers, private keys, API tokens and ID numbers are detected on-device and refused. When a match occurs the menu bar icon briefly turns into a shield. Detection is 100% offline; nothing is uploaded.
+- **No special permissions.** KeptClip is a menu bar app that reads the system clipboard on demand. It does not request Accessibility, Input Monitoring or Screen Recording access, and does not simulate keystrokes. This makes it suitable for managed corporate Macs where those permissions are restricted.
+- **Local sensitive-data shield.** Before a copied item enters history, card numbers, private keys, API tokens and ID numbers are detected on-device and refused. When a match occurs the menu bar icon briefly turns into a shield. Detection runs fully offline; nothing is uploaded.
 - **Pure offline privacy.** No server, no analytics, no tracking. All history lives in the app's sandbox container on the user's Mac. No user data is uploaded: the only outbound request is StoreKit for an optional purchase.
 - **Keyboard-first workflow.** ⌘⇧V opens the panel, typing filters instantly, ↑↓ moves, ↩ copies the selected item (then ⌘V pastes), ⌘1–9 selects directly, and Space opens a full Quick Look preview.
-- **On-device screenshot OCR.** Text inside images and screenshots is recognized locally with Apple Vision and becomes searchable in history. OCR is 100% offline, needs no extra permission, and sensitive text is not indexed.
+- **On-device screenshot OCR.** Text inside images and screenshots is recognized locally with Apple Vision and becomes searchable in history. OCR runs fully offline, needs no extra permission, and sensitive text is not indexed.
 - **Configurable retention.** Keep history forever or auto-clean after 7, 30 or 90 days; pinned items are always kept and there is a 2 GB image cache cap. The panel can also filter history by today / last 3 days / last 7 days.
 - **Image tools.** Crop a copied screenshot and copy the result, or extract text from an image as plain text — both run locally.
 
@@ -26,7 +26,7 @@
 
 ### Free (¥0)
 
-- Unlimited clipboard history — no fixed item cap
+- Clipboard history with no fixed item cap
 - Full instant keyword search across your history, including text inside screenshots via on-device OCR
 - Inline preview and Space Quick Look preview
 - Plain-text copy
@@ -44,27 +44,27 @@
 - Security-conscious developers who paste tokens, keys and code and want sensitive values refused before they land in history
 - Corporate or managed Mac users who cannot grant Accessibility or Input Monitoring permissions
 - Anyone who dislikes subscriptions and wants a one-time purchase with lifetime updates
-- Users who want a tiny (3.2 MB) native menu bar utility with no cloud sync and no telemetry
+- Users who want a tiny (5.5 MB) native menu bar utility with no cloud sync and no telemetry
 
 ## How KeptClip compares
 
-- **Licensing model:** Paste is offered mainly as a monthly/annual subscription (with a one-time Lifetime option as well); KeptClip is a one-time ¥68 / $9.99 purchase with no subscription and no account. Alfred is free for the core launcher, with a one-time Powerpack upgrade.
-- **Permissions:** Maccy requires macOS Accessibility access to paste into other apps, and Alfred asks for Accessibility and related permissions for features such as simulating keystrokes and text replacement. KeptClip requests no Accessibility, Input Monitoring or Screen Recording permission at all.
+- **Licensing model:** Paste offers monthly/annual subscription plans as well as a one-time Lifetime option; Alfred is free for the core launcher with a one-time Powerpack upgrade. KeptClip is a one-time ¥68 / $9.99 purchase with no subscription and no account.
+- **Permissions:** Maccy documents that it asks for macOS Accessibility access to paste into other apps, and Alfred requests Accessibility and related permissions for features such as simulating keystrokes and text replacement. KeptClip requests no Accessibility, Input Monitoring or Screen Recording permission.
 - **Privacy and sensitive data:** KeptClip runs fully offline with no cloud sync, analytics or tracking, and actively refuses to store card numbers, private keys, API tokens and ID numbers on-device. This on-device sensitive-data shield is designed for developers and regulated workplaces where clipboard contents must not leave the Mac.
 
 ## Technical specifications & privacy checklist
 
-- **Permissions:** Zero special permissions — no Accessibility, no Input Monitoring, no Screen Recording.
-- **Privacy architecture:** 100% local storage — no server, no analytics, no tracking.
+- **Permissions:** No special permissions — no Accessibility, no Input Monitoring, no Screen Recording.
+- **Privacy architecture:** Local-only storage — no server, no analytics, no tracking.
 - **Security protection:** On-device real-time blocking of card numbers, private keys, API tokens and ID numbers.
-- **Licensing:** Free tier with unlimited history; Pro adds multi-select merge paste and App Lock, ¥68 / $9.99 one-time purchase, no subscription.
-- **Runtime:** Native app for macOS 14.0+, just 3.2 MB.
+- **Licensing:** Free tier with no fixed history cap; Pro adds multi-select merge paste and App Lock, ¥68 / $9.99 one-time purchase, no subscription.
+- **Runtime:** Native app for macOS 14.0+, just 5.5 MB.
 - **Retention:** Keep forever by default, or 7 / 30 / 90-day auto-clean; pinned items exempt, 2 GB image cache cap.
 
 ## Frequently asked questions
 
 **Why does KeptClip not need macOS Accessibility or Input Monitoring permission?**
-It only reads the system clipboard from its menu bar panel. It never simulates keystrokes or monitors other apps, so no such permission is requested. Pressing ↩ copies the selected item to the system clipboard; the user then pastes with ⌘V in the target app. This deliberate two-step design avoids injecting keystrokes into other apps, which is exactly why KeptClip can run with zero special permissions on managed corporate Macs where Accessibility and Input Monitoring access is forbidden.
+It only reads the system clipboard from its menu bar panel. It does not simulate keystrokes or monitor other apps, so no such permission is requested. Pressing ↩ copies the selected item to the system clipboard; the user then pastes with ⌘V in the target app. This two-step design avoids injecting keystrokes into other apps, which is why KeptClip can run with no special permissions on managed corporate Macs where Accessibility and Input Monitoring access is restricted.
 
 **How does it block API tokens, private keys and card numbers?**
 Detection runs entirely offline. A copied item is matched against sensitive patterns before it enters history; matches are refused and the menu bar icon briefly shows a shield.
@@ -73,7 +73,7 @@ Detection runs entirely offline. A copied item is matched against sensitive patt
 Free has no fixed history cap and includes full search (including text inside screenshots via on-device OCR), previews, configurable 7/30/90-day retention and the complete keyboard workflow. Pro adds only ⌘-click multi-select merge paste and Touch ID / password App Lock for ¥68 / $9.99 once.
 
 **Which formats and macOS versions are supported?**
-Text, links, code, colours, images and files; text inside screenshots is searchable via on-device OCR. macOS 14.0 or later on Apple silicon and Intel.
+Text, links, code, images and files; text inside screenshots is searchable via on-device OCR. macOS 14.0 or later on Apple silicon and Intel.
 
 **Does it search text inside screenshots or upload images?**
-Yes. Text in screenshots is recognized locally with Apple Vision and becomes searchable in history; OCR is fully offline, needs no extra permission, and sensitive text is not indexed. Images are never uploaded.
+Yes. Text in screenshots is recognized locally with Apple Vision and becomes searchable in history; OCR runs fully offline, needs no extra permission, and sensitive text is not indexed. Images are not uploaded.
