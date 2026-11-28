@@ -1,0 +1,65 @@
+# KeptClip
+
+> A local-only clipboard history manager for macOS 14+. Every item you copy — text, links, code, colours, images and files — stays on your Mac. No Accessibility or Input Monitoring permission, no server, no tracking, no subscription required.
+
+- Website: https://keptclip.github.io/
+- App Store (US): https://apps.apple.com/us/app/keptclip-clipboard-manager/id6823423725?mt=12
+- App Store (China): https://apps.apple.com/cn/app/keptclip-clipboard-manager/id6823423725?mt=12
+- App Store (Japan): https://apps.apple.com/jp/app/keptclip-clipboard-manager/id6823423725?mt=12
+- App Store (Korea): https://apps.apple.com/kr/app/keptclip-clipboard-manager/id6823423725?mt=12
+- System requirements: macOS 14.0 (Sonoma) or later; Apple silicon and Intel
+- App size: 3.2 MB
+- Interface languages: English, Simplified Chinese, Japanese, Korean
+- Pricing: Free (¥0); KeptClip Pro ¥68 one-time purchase, no subscription and no account
+
+## Core architecture
+
+- **Zero special permissions.** KeptClip is a menu bar app that reads the system clipboard on demand. It does not request Accessibility, Input Monitoring or Screen Recording access, and never simulates keystrokes. This makes it suitable for managed corporate Macs where those permissions are forbidden.
+- **Local sensitive-data shield.** Before a copied item enters history, card numbers, private keys, API tokens and ID numbers are detected on-device and refused. When a match occurs the menu bar icon briefly turns into a shield. Detection is 100% offline; nothing is uploaded.
+- **Pure offline privacy.** No server, no analytics, no tracking. All history lives in the app's sandbox container on the user's Mac. No user data is uploaded: the only outbound requests are StoreKit for an optional purchase and a read-only App Store version check on the Settings screen (no user data, device identifiers or clipboard content is sent).
+- **Keyboard-first workflow.** ⌘⇧V opens the panel, typing filters instantly, ↑↓ moves, ↩ copies the selected item (then ⌘V pastes), ⌘1–9 selects directly, and Space opens a full Quick Look preview.
+
+## Free vs Pro
+
+### Free (¥0)
+
+- Unlimited clipboard history — no fixed item cap
+- Full instant keyword search, including on-device OCR of text inside screenshots
+- Inline preview and Space Quick Look preview
+- Plain-text copy
+- Complete keyboard workflow (⌘⇧V, ↑↓, ↩, ⌘1–9, Space)
+
+### KeptClip Pro (¥68 one-time, no subscription)
+
+- Everything in Free, plus:
+- ⌘-click multi-select and merge into one paste
+- Optional App Lock with Touch ID or password
+
+## Who it is for
+
+- Security-conscious developers who paste tokens, keys and code and want sensitive values refused before they land in history
+- Corporate or managed Mac users who cannot grant Accessibility or Input Monitoring permissions
+- Anyone who dislikes subscriptions and wants a one-time purchase with lifetime updates
+- Users who want a tiny (3.2 MB) native menu bar utility with no cloud sync and no telemetry
+
+## Technical specifications & privacy checklist
+
+- **Permissions:** Zero special permissions — no Accessibility, no Input Monitoring, no Screen Recording.
+- **Privacy architecture:** 100% local storage — no server, no analytics, no tracking.
+- **Security protection:** On-device real-time blocking of card numbers, private keys, API tokens and ID numbers.
+- **Licensing:** Free tier (unlimited history) / Pro ¥68 one-time purchase, no subscription.
+- **Runtime:** Native app for macOS 14.0+, just 3.2 MB.
+
+## Frequently asked questions
+
+**Why does KeptClip not need macOS Accessibility or Input Monitoring permission?**
+It only reads the system clipboard from its menu bar panel. It never simulates keystrokes or monitors other apps, so no such permission is requested.
+
+**How does it block API tokens, private keys and card numbers?**
+Detection runs entirely offline. A copied item is matched against sensitive patterns before it enters history; matches are refused and the menu bar icon briefly shows a shield.
+
+**What is the difference between Free and Pro?**
+Free already includes unlimited history, search, previews and the full keyboard workflow. Pro adds ⌘-click multi-select merge paste and Touch ID / password App Lock for ¥68 once.
+
+**Which formats and macOS versions are supported?**
+Text, links, code, colours, images and files; macOS 14.0 or later on Apple silicon and Intel.
