@@ -1,6 +1,6 @@
 # KeptClip
 
-> A local-only clipboard history manager for macOS 14+. Every item you copy — text, links, code, colours, images and files — stays on your Mac. No Accessibility or Input Monitoring permission, no server, no tracking, no subscription required.
+> A local-only clipboard history manager for macOS 14+. Every item you copy — text, links, code, colours, images and files — stays on your Mac, with unlimited history in the free tier. No Accessibility or Input Monitoring permission, no server, no tracking, no subscription required.
 
 - Website: https://keptclip.github.io/
 - App Store (US): https://apps.apple.com/us/app/keptclip-clipboard-manager/id6823423725?mt=12
@@ -18,21 +18,24 @@
 - **Local sensitive-data shield.** Before a copied item enters history, card numbers, private keys, API tokens and ID numbers are detected on-device and refused. When a match occurs the menu bar icon briefly turns into a shield. Detection is 100% offline; nothing is uploaded.
 - **Pure offline privacy.** No server, no analytics, no tracking. All history lives in the app's sandbox container on the user's Mac. No user data is uploaded: the only outbound request is StoreKit for an optional purchase.
 - **Keyboard-first workflow.** ⌘⇧V opens the panel, typing filters instantly, ↑↓ moves, ↩ copies the selected item (then ⌘V pastes), ⌘1–9 selects directly, and Space opens a full Quick Look preview.
+- **On-device screenshot OCR.** Text inside images and screenshots is recognized locally with Apple Vision and becomes searchable in history. OCR is 100% offline, needs no extra permission, and sensitive text is not indexed.
+- **Configurable retention.** Keep history forever or auto-clean after 7, 30 or 90 days; pinned items are always kept and there is a 2 GB image cache cap. The panel can also filter history by today / last 3 days / last 7 days.
+- **Image tools.** Crop a copied screenshot and copy the result, or extract text from an image as plain text — both run locally.
 
 ## Free vs Pro
 
 ### Free (¥0)
 
-- Most recent 50 clipboard items
-- Full instant keyword search across your history
+- Unlimited clipboard history — no fixed item cap
+- Full instant keyword search across your history, including text inside screenshots via on-device OCR
 - Inline preview and Space Quick Look preview
 - Plain-text copy
+- Configurable 7 / 30 / 90-day retention or keep forever
 - Complete keyboard workflow (⌘⇧V, ↑↓, ↩, ⌘1–9, Space)
 
 ### KeptClip Pro (¥68 / $9.99 one-time, no subscription)
 
-- Everything in Free, plus:
-- Unlimited history — no fixed item cap
+- Everything in Free is already included at no cost; Pro adds just two extras:
 - ⌘-click multi-select and merge into one paste
 - Optional App Lock with Touch ID or password
 
@@ -54,8 +57,9 @@
 - **Permissions:** Zero special permissions — no Accessibility, no Input Monitoring, no Screen Recording.
 - **Privacy architecture:** 100% local storage — no server, no analytics, no tracking.
 - **Security protection:** On-device real-time blocking of card numbers, private keys, API tokens and ID numbers.
-- **Licensing:** Free tier (recent 50 items) / Pro unlimited history, ¥68 / $9.99 one-time purchase, no subscription.
+- **Licensing:** Free tier with unlimited history; Pro adds multi-select merge paste and App Lock, ¥68 / $9.99 one-time purchase, no subscription.
 - **Runtime:** Native app for macOS 14.0+, just 3.2 MB.
+- **Retention:** Keep forever by default, or 7 / 30 / 90-day auto-clean; pinned items exempt, 2 GB image cache cap.
 
 ## Frequently asked questions
 
@@ -66,7 +70,10 @@ It only reads the system clipboard from its menu bar panel. It never simulates k
 Detection runs entirely offline. A copied item is matched against sensitive patterns before it enters history; matches are refused and the menu bar icon briefly shows a shield.
 
 **What is the difference between Free and Pro?**
-Free keeps the most recent 50 items and includes search, previews and the full keyboard workflow. Pro adds unlimited history, ⌘-click multi-select merge paste and Touch ID / password App Lock for ¥68 / $9.99 once.
+Free has no fixed history cap and includes full search (including text inside screenshots via on-device OCR), previews, configurable 7/30/90-day retention and the complete keyboard workflow. Pro adds only ⌘-click multi-select merge paste and Touch ID / password App Lock for ¥68 / $9.99 once.
 
 **Which formats and macOS versions are supported?**
-Text, links, code, colours, images and files; macOS 14.0 or later on Apple silicon and Intel.
+Text, links, code, colours, images and files; text inside screenshots is searchable via on-device OCR. macOS 14.0 or later on Apple silicon and Intel.
+
+**Does it search text inside screenshots or upload images?**
+Yes. Text in screenshots is recognized locally with Apple Vision and becomes searchable in history; OCR is fully offline, needs no extra permission, and sensitive text is not indexed. Images are never uploaded.
