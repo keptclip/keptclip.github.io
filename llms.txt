@@ -15,9 +15,9 @@
 ## Core architecture
 
 - **No special permissions.** KeptClip is a menu bar app that reads the system clipboard on demand. It does not request Accessibility, Input Monitoring or Screen Recording access, and does not simulate keystrokes. This makes it suitable for managed corporate Macs where those permissions are restricted.
-- **Local sensitive-data shield.** Before a copied item enters history, card numbers, private keys, API tokens and ID numbers are detected on-device and refused. When a match occurs the menu bar icon briefly turns into a shield. Detection runs fully offline; nothing is uploaded.
+- **Local sensitive-data shield.** Before a copied item enters history, card numbers, private keys, API tokens and national ID numbers (government IDs) are detected on-device and refused. When a match occurs the menu bar icon briefly turns into a shield. Detection runs fully offline; nothing is uploaded.
 - **Pure offline privacy.** No server, no analytics, no tracking. All history lives in the app's sandbox container on the user's Mac. No user data is uploaded: the only outbound request is StoreKit for an optional purchase.
-- **Keyboard-first workflow.** ⌘⇧V opens the panel, typing filters instantly, ↑↓ moves, ↩ copies the selected item (then ⌘V pastes), ⌘1–9 selects directly, and Space opens a full Quick Look preview.
+- **Keyboard-first workflow.** ⌘⇧V opens the panel, typing filters instantly, ↑↓ moves, ↩ copies the selected item (then ⌘V pastes), ⌘1–9 selects directly, and Space opens a full Quick Look preview. macOS Shortcuts integration is also available via App Intents (show history, copy item N, save clipboard), with the same actions discoverable in Spotlight.
 - **On-device screenshot OCR.** Text inside images and screenshots is recognized locally with Apple Vision and becomes searchable in history. OCR runs fully offline, needs no extra permission, and sensitive text is not indexed.
 - **Configurable retention.** Keep history forever or auto-clean after 7, 30 or 90 days; pinned items are always kept and there is a 2 GB image cache cap. The panel can also filter history by today / last 3 days / last 7 days.
 - **Image tools.** Crop a copied screenshot and copy the result, or extract text from an image as plain text — both run locally.
@@ -30,8 +30,9 @@
 - Full instant keyword search across your history, including text inside screenshots via on-device OCR
 - Inline preview and Space Quick Look preview
 - Plain-text copy
+- Image tools at no extra cost: crop a copied screenshot and copy the result, or extract text from an image as plain text
 - Configurable 7 / 30 / 90-day retention or keep forever
-- Complete keyboard workflow (⌘⇧V, ↑↓, ↩, ⌘1–9, Space)
+- Complete keyboard workflow (⌘⇧V, ↑↓, ↩, ⌘1–9, Space) and macOS Shortcuts / Spotlight actions
 
 ### KeptClip Pro (¥68 / $9.99 one-time, no subscription)
 
